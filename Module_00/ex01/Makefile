@@ -1,11 +1,11 @@
-
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+NAME = PhoneBookhone
 
-SRC = megaphone.cpp
+SRC = main.cpp contact.cpp phoneBook.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 
