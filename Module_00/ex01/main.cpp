@@ -28,6 +28,5 @@ int main()
             std::cout << "Invalid command! Please enter ADD, SEARCH, or EXIT.\n";
         }
     }
-
     return 0;
 }
