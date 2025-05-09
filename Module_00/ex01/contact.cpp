@@ -1,6 +1,5 @@
 #include "contact.hpp"
 #include <iostream>
-#include <limits>
 #include <string>
 
 Contact::Contact() : firstName("unknown firstName"), lastName("unknown lastName"), nickname("unknown nickname"), phoneNumber("unknown phoneNumber"), darkestSecret("unknown darkestSecret") {};
