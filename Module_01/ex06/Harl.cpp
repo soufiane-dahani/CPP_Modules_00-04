@@ -12,7 +12,7 @@ void Harl::info() {
 }
 
 void Harl::warning() {
-    std::cout << "[ WARNING ]\nI think I deserve some extra bacon for free.\n\nI've been coming for years whereas you started working here since last month.\n" << std::endl;
+    std::cout << "[ WARNING ]\nI think I deserve some extra bacon for free.\nI've been coming for years whereas you started working here since last month.\n" << std::endl;
 }
 
 void Harl::error() {
@@ -28,12 +28,26 @@ void Harl::complain(std::string level) {
         &Harl::warning,
         &Harl::error,
     };
-
+    int index = -1;
     for (int i = 0; i < 4; i++) {
         if (levels[i] == level) {
-            (this->*functions[i])();
-            return;
+            index = i;
+            break;
         }
     }
-    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+
+    switch (index) {
+        case 0:
+            (this->*functions[0])();
+        case 1:
+            (this->*functions[1])();
+        case 2:
+            (this->*functions[2])();
+        case 3:
+            (this->*functions[3])();
+            break;
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]\n";
+    }
+    
 }
