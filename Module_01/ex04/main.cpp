@@ -6,8 +6,6 @@ int main (int ac , char **av)
     std::string line;
     std::string s1 = av[2];
     std::string s2 = av[3];
-    // std::size_t i;
-    // int lenFirst = s1.length();
 
     if (ac != 4)
         return 1;
