@@ -3,42 +3,78 @@
 #include <string>
 
 Contact::Contact() : firstName("unknown firstName"), lastName("unknown lastName"), nickname("unknown nickname"), phoneNumber("unknown phoneNumber"), darkestSecret("unknown darkestSecret") {};
-void Contact::setContact()
+bool Contact::setContact()
 {
     std::cout << "Enter First Name : ";
-    std::getline(std::cin, firstName);
+    if (!std::getline(std::cin, firstName))
+    {
+        return false;
+    }
     while (firstName.empty()) {
         std::cout << "Enter again: ";
-        std::getline(std::cin, firstName);
+        if (!std::getline(std::cin, firstName))
+        {
+
+            return false;
+        }
     }
 
     std::cout << "Enter last Name : ";
-    std::getline(std::cin, lastName);
+    if (!std::getline(std::cin, lastName))
+    {
+        return false;
+    }
     while (lastName.empty()) {
         std::cout << "Enter again: ";
-        std::getline(std::cin, lastName);
+        if (!std::getline(std::cin, lastName))
+        {
+
+            return false;
+        }
     }
 
     std::cout << "Enter nickname : ";
-    std::getline(std::cin, nickname);
+    if (!std::getline(std::cin, nickname))
+    {
+        return false;
+    }
     while (nickname.empty()) {
         std::cout << "Enter again: ";
-        std::getline(std::cin, nickname);
+        if (!std::getline(std::cin, nickname))
+        {
+
+            return false;
+        }
     }
 
     std::cout << "Enter phone Number : ";
-    std::getline(std::cin, phoneNumber);
+    if (!std::getline(std::cin, phoneNumber))
+    {
+        return false;
+    }
     while (phoneNumber.empty()) {
         std::cout << "Enter again: ";
-        std::getline(std::cin, phoneNumber);
+        if (!std::getline(std::cin, phoneNumber))
+        {
+
+            return false;
+        }
     }
 
     std::cout << "Enter darkest Secret : ";
-    std::getline(std::cin, darkestSecret);
+    if (!std::getline(std::cin, darkestSecret))
+    {
+        return false;
+    }
     while (darkestSecret.empty()) {
         std::cout << "Enter again: ";
-        std::getline(std::cin, darkestSecret);
+        if (!std::getline(std::cin, darkestSecret))
+        {
+
+            return false;
+        }
     }
+    return true;
 }
 
 void Contact::displaySummary(int index) const

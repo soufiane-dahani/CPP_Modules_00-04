@@ -1,21 +1,22 @@
 #include "phoneBook.hpp"
 #include "contact.hpp"
 #include <iostream>
-#include <limits>
 #include <cstdlib> 
 PhoneBook::PhoneBook() : contactCount(0), nextIndex(0){};
 
-void PhoneBook::addContact()
+bool PhoneBook::addContact()
 {
     std::cout << "Adding a new contact...\n";
-    contact[nextIndex].setContact();
+    if (!contact[nextIndex].setContact())
+        return false;
 
     if (contactCount < 8)
         contactCount++;
     nextIndex = (nextIndex + 1) % 8;
+    return true;
 }
 
-void PhoneBook::searchContacts() const
+bool PhoneBook::searchContacts() const
 {
     int index;
     std::string input;
@@ -29,16 +30,16 @@ void PhoneBook::searchContacts() const
     }
 
     std::cout << "Enter the index of the contact you want to view: ";
-    std::cin >> input ;
+    if (!getline(std::cin, input))
+    {
+        return false;
+    }
 
     if (input.empty() || input.find_first_not_of("0123456789") != std::string::npos)
     {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Invalid input. Please enter a valid number.\n";
-        return;
+        return true;
     }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     index = std::atoi(input.c_str());
 
     if (index >= 0 && index < contactCount)
@@ -49,5 +50,6 @@ void PhoneBook::searchContacts() const
     {
         std::cout << "Invalid index. Please enter a valid index.\n";
     }
+    return true;
 }
 

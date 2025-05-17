@@ -12,7 +12,7 @@ class Contact
     std::string darkestSecret;
     public :
         Contact();
-        void setContact();
+        bool setContact();
         void displaySummary(int index) const;
         void displayFull() const;
 };
