@@ -1,5 +1,5 @@
-#ifndef CLAVTRAP_H
-#define CLAVTRAP_H
+#ifndef CLAVTRAP_HHP
+#define CLAVTRAP_HHP
 #include <string>
 #include "ClapTrap.hpp"
 

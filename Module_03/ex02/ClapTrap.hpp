@@ -1,5 +1,5 @@
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HHP
+#define CLAPTRAP_HHP
 #include <string>
 
 
