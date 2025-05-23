@@ -1,4 +1,3 @@
-
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
@@ -16,5 +15,6 @@ int main()
     meta->makeSound();
     delete i;
     delete j;
+    delete meta;
     return 0;
 }
