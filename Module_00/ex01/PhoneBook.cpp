@@ -1,5 +1,5 @@
-#include "phoneBook.hpp"
-#include "contact.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <cstdlib> 
 PhoneBook::PhoneBook() : contactCount(0), nextIndex(0){};
@@ -22,7 +22,7 @@ bool PhoneBook::searchContacts() const
     std::string input;
 
     std::cout << "List of contacts:\n";
-    std::cout << "Index | First Name | Last Name | Nickname\n";
+    std::cout << "Index     |First Name|Last Name |Nickname   \n";
     std::cout << "-------------------------------------------\n";
 
     for (int i = 0; i < contactCount; i++) {

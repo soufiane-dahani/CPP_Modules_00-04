@@ -1,6 +1,7 @@
-#include "contact.hpp"
+#include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <iomanip> 
 
 Contact::Contact() : firstName("unknown firstName"), lastName("unknown lastName"), nickname("unknown nickname"), phoneNumber("unknown phoneNumber"), darkestSecret("unknown darkestSecret") {};
 bool Contact::setContact()
@@ -10,7 +11,7 @@ bool Contact::setContact()
     {
         return false;
     }
-    while (firstName.empty()) {
+    while (firstName.empty() || firstName.find_first_not_of("qwertyuiopasdfghjklzxcvbnm") != std::string::npos) {
         std::cout << "Enter again: ";
         if (!std::getline(std::cin, firstName))
         {
@@ -24,7 +25,7 @@ bool Contact::setContact()
     {
         return false;
     }
-    while (lastName.empty()) {
+    while (lastName.empty() || lastName.find_first_not_of("qwertyuiopasdfghjklzxcvbnm") != std::string::npos) {
         std::cout << "Enter again: ";
         if (!std::getline(std::cin, lastName))
         {
@@ -52,7 +53,7 @@ bool Contact::setContact()
     {
         return false;
     }
-    while (phoneNumber.empty()) {
+    while (phoneNumber.empty() || phoneNumber.find_first_not_of("0123456789") != std::string::npos) {
         std::cout << "Enter again: ";
         if (!std::getline(std::cin, phoneNumber))
         {
@@ -77,20 +78,19 @@ bool Contact::setContact()
     return true;
 }
 
+std::string formatField(const std::string& field) {
+    if (field.length() > 10)
+        return field.substr(0, 9) + ".";
+    else
+        return std::string(10 - field.length(), ' ') + field;
+}
+
 void Contact::displaySummary(int index) const
 {
-    std::cout.width(10);
-    std::cout.fill(' ');
-    std::cout << index << "|";
-    std::cout.width(10);
-    std::cout.fill(' ');
-    std::cout << firstName << "|";
-    std::cout.width(10);
-    std::cout.fill(' ');
-    std::cout << lastName << "|";
-    std::cout.width(10);
-    std::cout.fill(' ');
-    std::cout << nickname << std::endl;
+    std::cout << std::setw(10) << index << "|";
+    std::cout << formatField(firstName) << "|";
+    std::cout << formatField(lastName) << "|";
+    std::cout << formatField(nickname) << std::endl;
 }
 
 void Contact::displayFull() const
