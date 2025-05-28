@@ -11,7 +11,7 @@ bool Contact::setContact()
     {
         return false;
     }
-    while (firstName.empty() || firstName.find_first_not_of("qwertyuiopasdfghjklzxcvbnm") != std::string::npos) {
+    while (firstName.empty() || firstName.find_first_not_of("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM") != std::string::npos) {
         std::cout << "Enter again: ";
         if (!std::getline(std::cin, firstName))
         {
@@ -25,7 +25,7 @@ bool Contact::setContact()
     {
         return false;
     }
-    while (lastName.empty() || lastName.find_first_not_of("qwertyuiopasdfghjklzxcvbnm") != std::string::npos) {
+    while (lastName.empty() || lastName.find_first_not_of("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM") != std::string::npos) {
         std::cout << "Enter again: ";
         if (!std::getline(std::cin, lastName))
         {
