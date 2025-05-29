@@ -3,18 +3,21 @@
 #include <fstream>
 int main (int ac , char **av)
 {
+    
+    if (ac != 4)
+        return 1;
     std::string line;
     std::string s1 = av[2];
     std::string s2 = av[3];
-
-    if (ac != 4)
-        return 1;
     std::fstream file(av[1]);
      if (!file) {
         std::cerr << "Could not open input file.\n";
         return 1;
     }
-    std::ofstream outFile("example.txt.replace");
+    std::string hello;
+    hello = av[1];
+    hello += ".replace";
+    std::ofstream outFile(hello.c_str());
     if (!outFile) {
         std::cerr << "Could not open output file.\n";
         return 1;
