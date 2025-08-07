@@ -1,5 +1,4 @@
-#ifndef CLAPTRAP_HHP
-#define CLAPTRAP_HHP
+#pragma once
 #include <string>
 
 
@@ -7,9 +6,9 @@ class ClapTrap
 {
     private:
         std::string _name;
-        long long _hit;
-        long long _energy;
-        long long _attack;
+        unsigned int _hit;
+        unsigned int _energy;
+        unsigned int _attack;
 
     public:
         ClapTrap();
@@ -21,5 +20,3 @@ class ClapTrap
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
-
-#endif
