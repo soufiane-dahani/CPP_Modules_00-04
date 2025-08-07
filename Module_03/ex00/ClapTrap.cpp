@@ -16,11 +16,14 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _atta
     std::cout << "constructor parameterized  called for ClapTrap: " << _name << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &other) 
-    : _name(other._name), _hit(other._hit), _energy(other._energy), _attack(other._attack) {}
+    : _name(other._name), _hit(other._hit), _energy(other._energy), _attack(other._attack) {
+        std::cout << "Copy constructor called for ClapTrap: " << _name << std::endl;
+    }
 ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 {
     if (this != &other)
     {
+        std::cout << "Assignment operator called for ClapTrap: " << _name << std::endl;
         this->_attack = other._attack;
         this->_name = other._name;
         this->_hit = other._hit;
