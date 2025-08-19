@@ -1,5 +1,4 @@
-#ifndef CLAPTRAP_HHP
-#define CLAPTRAP_HHP
+#pragma once
 #include <string>
 
 
@@ -22,4 +21,3 @@ class ClapTrap
         void beRepaired(unsigned int amount);
 };
 
-#endif

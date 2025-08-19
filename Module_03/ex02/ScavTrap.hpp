@@ -1,5 +1,4 @@
-#ifndef CLAVTRAP_HHP
-#define CLAVTRAP_HHP
+#pragma once
 #include <string>
 #include "ClapTrap.hpp"
 
@@ -14,5 +13,3 @@ class ScavTrap : public ClapTrap
         ~ScavTrap();
         void guardGate();
 };
-
-#endif

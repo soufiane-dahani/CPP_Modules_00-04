@@ -7,6 +7,7 @@ int main() {
 
     std::cout << "\n----- Use Special Ability -----" << std::endl;
     a.highFivesGuys();
+    a.attack("ff");
 
     std::cout << "\n----- Copy FragTrap -----" << std::endl;
     FragTrap b(a);

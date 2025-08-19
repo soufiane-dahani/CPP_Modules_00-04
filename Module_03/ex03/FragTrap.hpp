@@ -1,5 +1,4 @@
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#pragma once
 #include <string>
 #include "ClapTrap.hpp"
 
@@ -14,5 +13,3 @@ class FragTrap : virtual public ClapTrap
         ~FragTrap();
         void highFivesGuys(void);
 };
-
-#endif
