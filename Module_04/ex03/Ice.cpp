@@ -1,5 +1,6 @@
 #include "Ice.hpp"
 #include <string>
+#include <iostream>
 
 Ice::Ice() : AMateria("ice")
 {
