@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "ICharacter.hpp"
+#include <iostream>
 class AMateria
 {
     protected:

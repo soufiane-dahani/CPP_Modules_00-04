@@ -14,7 +14,7 @@ int main() {
 
     std::cout << "\nTrying to instantiate Animal directly..." << std::endl;
 
-    //Animal animal;
+    // Animal *animal = new Animal();
 
     return 0;
 }
