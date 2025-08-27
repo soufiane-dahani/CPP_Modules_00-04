@@ -27,6 +27,12 @@ Character::~Character()
 Character::Character(std::string name)
 {
     _name = name;
+    int i = 0;
+    while (i < 4)
+    {
+        _inventory[i] = nullptr;
+        i++;
+    }
     std::cout << "Parameterized constructor called for Character: " << name << std::endl;
 }
 
