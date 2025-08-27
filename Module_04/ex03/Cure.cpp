@@ -2,25 +2,25 @@
 #include <string>
 #include <iostream>
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Default constructor called for Cure: " << _type << std::endl;
+    //std::cout << "Default constructor called for Cure: " << _type << std::endl;
 }
 
 Cure::~Cure()
 {
-    std::cout << "Destructor called for Cure: " << _type << std::endl;
+    //std::cout << "Destructor called for Cure: " << _type << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other)
 {
-    std::cout << "copy constructor called for Cure: " << _type << std::endl;
+    //std::cout << "copy constructor called for Cure: " << _type << std::endl;
 }
 
 Cure& Cure::operator=(const Cure &other)
 {
     AMateria::operator=(other);
-    std::cout << "copy assignment called for Cure: " << _type << std::endl;
+    //std::cout << "copy assignment called for Cure: " << _type << std::endl;
     return *this;
 }
 

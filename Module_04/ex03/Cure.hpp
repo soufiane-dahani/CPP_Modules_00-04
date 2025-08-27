@@ -7,6 +7,6 @@
     Cure(const Cure &other); 
     Cure& operator=(const Cure &other); 
     ~Cure(); 
-    AMateria* clone() const override ;
-    void use(ICharacter& target) override;
+    AMateria* clone() const ;
+    void use(ICharacter& target);
 };

@@ -1,4 +1,5 @@
 #include "MateriaSource.hpp"
+#include <cstddef>
 #include <iostream>
 #include <ostream>
 
@@ -7,10 +8,10 @@ MateriaSource::MateriaSource()
     int i = 0;
     while (i < 4)
     {
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
         i++;
     }
-    std::cout << "Default constructor called for MateriaSource: " << std::endl;
+    //std::cout << "Default constructor called for MateriaSource: " << std::endl;
 }
 
 MateriaSource::~MateriaSource()
@@ -20,7 +21,7 @@ MateriaSource::~MateriaSource()
         if (_inventory[i])
             delete _inventory[i];
     }
-    std::cout << "Destructor called for MateriaSource: " << std::endl;
+    //std::cout << "Destructor called for MateriaSource: " << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other)
@@ -30,9 +31,9 @@ MateriaSource::MateriaSource(const MateriaSource &other)
         if (other._inventory[i])
             _inventory[i] = other._inventory[i]->clone();
         else
-            _inventory[i] = nullptr;
+            _inventory[i] = NULL;
     }
-    std::cout << "Copy constructor called for MateriaSource: "<< std::endl;
+    //std::cout << "Copy constructor called for MateriaSource: "<< std::endl;
 }
 MateriaSource& MateriaSource::operator=(const MateriaSource &other)
 {
@@ -45,9 +46,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &other)
             if (other._inventory[i])
                 _inventory[i] = other._inventory[i]->clone();
             else
-                _inventory[i] = nullptr;
+                _inventory[i] = NULL;
         }
-        std::cout << "Copy assignment operator called for MateriaSource" << std::endl;
+        //std::cout << "Copy assignment operator called for MateriaSource" << std::endl;
     }
     return *this;
 }
@@ -62,12 +63,13 @@ void MateriaSource::learnMateria(AMateria* m)
         if (!_inventory[i])
         {
             _inventory[i] = m->clone();  // 7tina hna copy
+            delete m;
             std::cout << "Learned materia: " << _inventory[i]->getType() << std::endl;
             return;
         }
     }
 
-    std::cout << "MateriaSource inventory full, cannot learn more." << std::endl;
+    //std::cout << "MateriaSource inventory full, cannot learn more." << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
@@ -76,9 +78,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
     {
         if (_inventory[i] && _inventory[i]->getType() == type)
         {
-            return _inventory[i]->clone();  // return copy jdida
+            return _inventory[i]->clone();  // return copy
         }
     }
-
-    return nullptr; // type not found
+    return NULL; // type not found
 }

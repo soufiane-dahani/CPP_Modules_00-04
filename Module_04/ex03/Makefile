@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = ./a.out
+NAME = interface
 
 SRC = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
